@@ -4,7 +4,7 @@ from collections import defaultdict
 
 
 OPTIMAL_INTERVALS = [(0, 0.25), (0.5, 0.75)]
-VALIDATION_SAMPLE = 50
+VALIDATION_SAMPLE = 8
 
 
 # needed for section a: generates a label (y) according to the given distribution
@@ -71,7 +71,7 @@ def calculate_true_error(intervals):
     return error
 
 
-# section f: cross validation calculation - choose sample of sufficient size and match
+# section f: cross validation calculation - choose validation size and match
 def calculate_cross_val_error(intervals):
     pairs = draw_pairs(VALIDATION_SAMPLE)
     error = 0.0
@@ -113,5 +113,5 @@ def error_per_k():
     return errors[0], errors[1]
 
 
-# print experiment([2], 20, 100)
-print error_per_k()
+# print experiment(range(1, 21), 42, 1)[2]
+# print error_per_k()
